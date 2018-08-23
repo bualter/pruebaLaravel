@@ -28,6 +28,13 @@ Route::get('/resultado/{numero}/{numero2?}',function($numero,$numero2=null){
     }
 } );
 
+
+// 180821
+// la pongo arriba de buscar get('/peliculas/{id}', antes, porque primero va intentar llamar a esa 
+Route::get('/peliculas/listarTodas', 'PeliculasController@listarTodas');
+
+Route::get('/peliculas/listarTodasDb', 'PeliculasController@listarTodasDb');
+
 // 180816
 Route::get('/peliculas/{id}', 'PeliculasController@buscarPeliculaId');
 

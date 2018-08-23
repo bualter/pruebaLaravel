@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
+
 
 class PeliculasController extends Controller
 {
@@ -33,5 +35,16 @@ class PeliculasController extends Controller
         }
       }
       return "No se encontraron resultados.";
+    }
+
+    public function listarTodas(){
+        $peliculas = $this->peliculas;
+        return view('peliculas',compact('peliculas'));
+    }
+
+    public function listarTodasDb(){
+        // estas funcion me las trae de la base de Datos
+        $peliculas = Movie::all();
+        return view('peliculas',compact('peliculas'));
     }
 }
